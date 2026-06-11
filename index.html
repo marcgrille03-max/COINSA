@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COINSA - Construcciones y Reformas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">COINSA</div>
+        <nav>
+            <!-- Se podría agregar navegación aquí si es necesario -->
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>COINSA</h1>
+        <h2>VALLES BCN S.L.</h2>
+        <p>NIF-B-56985666. C/SANT ENRIC 28. 08291 RIPOLLET (BARCELONA)</p>
+    </section>
+
+    <section class="gallery-container">
+        <div class="section-title">
+            <h3>Nuestras Reformas</h3>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openLightbox('assets/obra_1.png')">
+                <img src="assets/obra_1.png" alt="Reforma COINSA 1">
+            </div>
+            <div class="gallery-item" onclick="openLightbox('assets/obra_2.png')">
+                <img src="assets/obra_2.png" alt="Reforma COINSA 2">
+            </div>
+            <div class="gallery-item" onclick="openLightbox('assets/obra_3.png')">
+                <img src="assets/obra_3.png" alt="Reforma COINSA 3">
+            </div>
+            <div class="gallery-item" onclick="openLightbox('assets/obra_4.png')">
+                <img src="assets/obra_4.png" alt="Reforma COINSA 4">
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close-btn">&times;</span>
+        <img id="lightbox-img" src="" alt="Vista ampliada">
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <h4>COINSA - VALLES BCN S.L.</h4>
+            <p>Expertos en construcciones y reformas de calidad.</p>
+        </div>
+        <div class="copyright">
+            &copy; 2026 COINSA. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <script>
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; //Prevenir el desplazamiento
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto'; //Restaurar desplazamiento
+        }
+    </script>
+
+</body>
+
+</html>
